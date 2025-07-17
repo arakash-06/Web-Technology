@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cloud Discovery - EverestIMS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 bg-white p-4 rounded shadow">
+        <h2 class="text-center text-primary mb-4"> Cloud Discovery Configuration</h2>
+        <form>
+
+          <div class="mb-3">
+            <label class="form-label"><strong>Select Cloud Provider</strong></label>
+            <select class="form-select" required>
+              <option selected disabled>Choose...</option>
+              <option value="aws">AWS</option>
+              <option value="azure">Azure</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label"><strong>Access Key</strong></label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+              <input type="text" class="form-control" placeholder="Enter Access Key" required>
+		<div class="valid-feedback">Valid.</div>
+		<div class="invalid-feedback">Please fill out this field.
+		</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label"><strong>Secret Key</strong></label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-shield-lock-fill"></i></span>
+              <input type="password" class="form-control" placeholder="Enter Secret Key" required>
+            </div>
+          </div>
+
+         <div class="mb-3">
+  <label class="form-label"><strong>Select Default Monitoring</strong></label>
+  <div class="dropdown">
+    <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="monitoringDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      Choose Monitoring Options
+    </button>
+    <ul class="dropdown-menu w-100" aria-labelledby="monitoringDropdown">
+      <li class="px-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="vmMonitoring" value="vm">
+          <label class="form-check-label" for="vmMonitoring">VM Monitoring</label>
+        </div>
+      </li>
+      <li class="px-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="storageMonitoring" value="storage">
+          <label class="form-check-label" for="storageMonitoring">Storage Monitoring</label>
+        </div>
+      </li>
+      <li class="px-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="networkMonitoring" value="network">
+          <label class="form-check-label" for="networkMonitoring">Network Monitoring</label>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+          <div class="mb-3">
+            <label class="form-label"><strong>Select Services to Monitor</strong></label>
+           <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="rdbms" id="rdbmsCheck">
+              <label class="form-check-label" for="rdbmsCheck">RDBMS (e.g., RDS, Azure SQL)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="stack" id="stackCheck">
+              <label class="form-check-label" for="stackCheck">Stack-based Services (e.g., LAMP, MEAN)</label>
+            </div>
+          </div>
+
+	<div class="d-flex justify-content-center align-items-center h-100">
+          <button type="submit" class="btn btn-outline-primary w-50 fw-bold"> Start Discovery</button>
+	</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
